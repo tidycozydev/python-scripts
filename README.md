@@ -1,7 +1,7 @@
 # Python scripts
 
-I'm not familiar with Python language.
+I'm not familiar with Python.
 
 Also I need small scripts.
 
-Why not write them in Python then? :)
+Why not write them in Python then?
