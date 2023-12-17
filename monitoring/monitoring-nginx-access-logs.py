@@ -38,4 +38,4 @@ html_file.write(html_df.to_html())
 
 # Write a file containing all the suspects IPs for automated usages
 csv_file = open('csv/ips-' + date_str + '.csv', 'w')
-csv_file.write(csv_df.drop_duplicates(subset = 'ip')['ip'].to_csv(index=False))
+csv_file.write(csv_df.drop_duplicates(subset = 'ip')['ip'].to_csv(header=None, index=False))
