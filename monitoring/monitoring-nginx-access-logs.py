@@ -22,7 +22,7 @@ df = pandas.read_csv(
 ipsToIgnore = args.ips.split(',')
 sub_df = df[~df['ip'].isin(ipsToIgnore)].query('status != 200')
 
-# Sum of non OK status by IP address, order by number of queries
+# Group by IPs and status, add a count column, order
 new_df = sub_df.groupby(['ip', 'status'])['status'].count().sort_values(ascending=False).reset_index(name='count')
 
 # Print in HTML format
