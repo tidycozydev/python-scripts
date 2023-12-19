@@ -5,7 +5,7 @@ argParser = argparse.ArgumentParser()
 argParser.add_argument("-i", "--ips", help="IPs we don't need to monitor, comma-separated values")
 args = argParser.parse_args()
 
-
+# Path to access.log file, could be a parameter
 access_log = open('/var/log/nginx/access.log', 'r')
 
 # Find this line of code here: https://riptutorial.com/pandas/example/15180/read-nginx-access-log--multiple-quotechars-
