@@ -26,8 +26,9 @@ filtered_df = df[~df['ip'].isin(ipsToIgnore)].query('status != 200')
 # Group by IPs and status, add a count column, sort
 html_df = filtered_df.groupby(['ip', 'status'])['status'].count().sort_values(ascending=False).reset_index(name='count')
 
-# Filter requests trying to access some .env file
-csv_df = filtered_df[filtered_df['request'].str.contains('.env', na=False)]
+# Filter requests trying to access some .env, .git ot .php file
+# /!\ If you deploy PHP app, you should remove .php /!\
+csv_df = filtered_df[filtered_df['request'].str.contains('\.env|\.git|\.php', na=False)]
 
 
 date_str = datetime.datetime.now().strftime("%Y-%m-%d")
